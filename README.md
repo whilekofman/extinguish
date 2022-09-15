@@ -29,6 +29,6 @@ The webpage will include:
 * On load the user will be presented with the rules of the game, and have the ability to select how to start
 * Personel links, github, linkedIn, etc and About
 
-<img src="https://wireframe.cc/dtM9CH"
+<img src="images/wireframe.png"
      alt="Wire frame"
  />
