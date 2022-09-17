@@ -1,12 +1,9 @@
-
-
+const View = require("./extinguish-view.js")
+const Board = require("../src/scripts/board.js")
+window.View = View;
 document.addEventListener('DOMContentLoaded', () => {
-    const main = document.getElementById('.gameboard')
-})
+    const main = document.getElementById('gameboard')
+    new View(main);
 
-document.addEventListener('DOMContentLoaded', () => {
-    const root = document.getElementById('root');
-    const heading = new Heading('Hey Programmers!!');
-    console.log(heading.heading);
-    root.innerHTML = heading.heading;
+    // console.log("HELP")
 })

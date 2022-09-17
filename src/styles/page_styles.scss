@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+body {
+    background-color: peachpuff;
+
+}
+.game-name{
+    display: flex;
+    color: #000000fa;
+    font-size: 50px;
+    justify-content: center;
+    font-family: 'Permanenet Marker', 'Permanent Marker';
+
+}
+
+ul {
+    display: flex;
+    background-color: lightgrey;
+    color: green;
+    //colors will be changing just to see visible changes
+    // padding: 20px;
+    list-style-type: none;
+    width: 625px;
+    display: grid;
+    grid-template-columns: repeat(5, 125px);
+    grid-template-rows: 125px 125px 125px 125px 125px;
+}
+
+// ul > 
+.gameboard{
+    display: flex;
+    justify-content: center;
+}
+
+ul.boardposition {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
