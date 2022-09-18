@@ -7,7 +7,7 @@ body {
 .game-name{
     display: flex;
     color: #000000fa;
-    font-size: 50px;
+    font-size: 100px;
     justify-content: center;
     font-family: 'Permanenet Marker', 'Permanent Marker';
 
@@ -15,25 +15,31 @@ body {
 
 ul {
     display: flex;
-    background-color: lightgrey;
+    background-color: black;
+    flex-wrap: wrap;
     color: green;
-    //colors will be changing just to see visible changes
-    // padding: 20px;
+    padding: 20px;
     list-style-type: none;
     width: 625px;
     display: grid;
     grid-template-columns: repeat(5, 125px);
-    grid-template-rows: 125px 125px 125px 125px 125px;
+    // grid-template-columns: repeat(5, auto-fit, minmax(100px, 1fr));
+    // grid-template-rows: repeat(5, auto-fit, minmax(100px, 1fr));
+    
 }
-
+        // 125px 125px 125px 125px 125px);
+        // 
 // ul > 
 .gameboard{
     display: flex;
     justify-content: center;
 }
 
-ul.boardposition {
+li {
     width: 100px;
     height: 100px;
+    border: 12px solid green;
+    background-color: white;
+    text-align: center;
     margin: auto;
 }
