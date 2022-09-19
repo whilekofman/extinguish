@@ -7,7 +7,8 @@ class View {
         this.htmlEl = htmlEl
   
         this.setUpBoard(htmlEl)
-
+        
+        this.registerClick()
         
     }
     setUpBoard(htmlEl) {
@@ -26,30 +27,53 @@ class View {
                     li.innerText = `${Board.marks[1]}`
                 }
                 ul.append(li)
+                
             })
         })
-        ul.dataset.id = "game-grid"
-        htmlEl.append(ul)         
+        ul.className= "game-grid"
+        htmlEl.append(ul)
+    }
+
+    redrawGrid(){
+        let allLi = this.htmlEl.getElementsByClassName("boardpositions")
+        for(let li of allLi) {
+            if (li.classList.contains('false')) {
+                li.innerText = `false`
+            } else {
+                li.innerText = `${Board.marks[1]}`
+            }
+        }
 
     }
 
-    changeClass(){
+    registerClick() {
+        const ul = document.querySelector('.game-grid')
+        // debugger
+        ul.addEventListener('click', (e) => {
+            const tile = e.target
+            const tilePosition = JSON.parse(tile.dataset.id) 
+            this.changeClass(tile) 
+            this.board.changeState(tilePosition)    
+            let neighboringTiles = this.board.moveMatrix(tilePosition)
+            console.log(neighboringTiles)
+            for (let pos of neighboringTiles) {
+                this.board.changeState(pos)    
+                const dataId = JSON.stringify(pos)
+                const tile = document.querySelector(`[data-id="${dataId}"]`) 
+                this.changeClass(tile)
+            }
+            if(this.board.winRound()) console.log('congratulations!') 
+            this.redrawGrid()
+        })
+    } 
+
+    changeClass(li){
         if (li.classList.contains('true')) {
             li.classList.replace('true', 'false');
         } else if (li.classList.contains('false')) {
             li.classList.replace('false', 'true')
         }
-
     }
-
-    clickTile() {
-        // const tile = this.grid[pos[0]][pos[1]]   
-
-        this.htmlEl.addEventListener('click', e => {
-            console.log('click')
-            changeState(e)
-        })
-    } 
 
 }
 
