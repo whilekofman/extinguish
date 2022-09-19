@@ -10,13 +10,14 @@ class Board {
             let posValue = false
             let row = []
             for (let j = 0; j < 5; j++) {
-                // if (j === 0 && i === 0) posValue = true
+                if (i % 2 === 0) posValue = true
                 row.push(posValue);
             }
             grid.push(row);
             grid[0][1] = true
             grid[0][2] = true
             grid[0][3] = true
+            // debugger
             // grid[2][0] = true
 
             // grid[1][2] = true

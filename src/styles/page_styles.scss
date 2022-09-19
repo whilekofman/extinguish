@@ -24,22 +24,17 @@ ul {
     display: block;
     background-color: black;
     color: green;
-    // font-size: 20px;
     padding: 20px;
     list-style-type: none;
     max-width: 625px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(125px, 5fr));
-    // grid-template-rows: repeat(5, auto-fit, minmax(100px, 1fr));
-    // grid-template-columns: repeat(5, auto-fit, minmax(125px, 5fr));
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
 
 }
 
-// 125px 125px 125px 125px 125px);
-// 
-// ul > 
+
 
 li {
     line-height: 6;
@@ -50,7 +45,7 @@ li {
     margin-left: auto;
     margin-right: auto;
     border: 12px solid green;
-    background-color: white;
+    background-color: rgb(4, 4, 4);
     text-align: center;
     margin: auto;
 }
