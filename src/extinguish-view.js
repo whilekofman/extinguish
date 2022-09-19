@@ -10,8 +10,6 @@ class View {
 
         
     }
-    
-
     setUpBoard(htmlEl) {
         const ul = document.createElement('ul')
         this.board.grid.forEach ((row, rIdx) => {
@@ -35,17 +33,16 @@ class View {
 
     }
 
-    
-    userClick(e){
-        let tile = e.target
-        if (tile.status === false){
-            tile.status = true
-        } else {
-            tile.status = false
-        }
+
+    clickTile() {
+        // const tile = this.grid[pos[0]][pos[1]]   
+
+        this.htmlEl.addEventListener('click', (e) => {
+            console.log('click')
+            changeState(e)
+        })
     } 
 
-    // toggleTile()
 }
 
 

@@ -23,22 +23,21 @@ class Board {
     winRound(){
         for(let i = 0; i < this.grid.length; i++){
             let row = this.grid[i]
-            console.log(row)
             for (let col = 0; col < row.length; col++){
-                // console.log(row[col])
                 if (row[col] === true) return false 
             }
         }
         return true
     }
-    //     forEach((row => {
-    //         console.log(row)
-    //         row.forEach((col) => col === true)
-    //             // console.log(col)
-    //  //return false
-            
-            
-    //     }))
+    
+    changeState(tile){
+        if (tile === false){
+            tile = true
+        } else {
+            tile = false
+        }
+    }
+
 }
 
 Board.marks = ['', '🔥']

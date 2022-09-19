@@ -17,26 +17,33 @@ body {
   font-family: "Permanenet Marker", "Permanent Marker";
 }
 
-ul {
-  display: flex;
-  background-color: black;
-  flex-wrap: wrap;
-  color: green;
-  padding: 20px;
-  list-style-type: none;
-  width: 625px;
-  display: grid;
-  grid-template-columns: repeat(5, 125px);
-}
-
 .gameboard {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+ul {
+  display: block;
+  background-color: black;
+  color: green;
+  padding: 20px;
+  list-style-type: none;
+  max-width: 625px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 5fr));
 }
 
 li {
+  line-height: 6;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
   width: 100px;
-  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
   border: 12px solid green;
   background-color: white;
   text-align: center;

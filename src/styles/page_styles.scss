@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+
 body {
     background-color: peachpuff;
-
 }
 .game-name{
     display: flex;
@@ -12,32 +12,39 @@ body {
     font-family: 'Permanenet Marker', 'Permanent Marker';
 
 }
-
-ul {
+.gameboard {
     display: flex;
-    background-color: black;
+    justify-content: center;
     flex-wrap: wrap;
+}
+ul {
+    display: block;
+    background-color: black;
     color: green;
+    // font-size: 20px;
     padding: 20px;
     list-style-type: none;
-    width: 625px;
+    max-width: 625px;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
-    grid-template-columns: repeat(5, 125px);
-    // grid-template-columns: repeat(5, auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(125px, 5fr));
     // grid-template-rows: repeat(5, auto-fit, minmax(100px, 1fr));
+    // grid-template-columns: repeat(5, auto-fit, minmax(125px, 5fr));
     
 }
         // 125px 125px 125px 125px 125px);
         // 
 // ul > 
-.gameboard{
-    display: flex;
-    justify-content: center;
-}
 
 li {
-    width: 100px;
-    height: 100px;
+    line-height: 6;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width:  100px;
+    margin-left: auto;
+    margin-right: auto;
     border: 12px solid green;
     background-color: white;
     text-align: center;
