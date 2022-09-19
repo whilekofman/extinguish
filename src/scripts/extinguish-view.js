@@ -1,5 +1,5 @@
 // export class View
-const Board = require("../src/scripts/board.js")
+const Board = require("./board.js")
 
 class View {
     constructor(htmlEl, board){
@@ -33,11 +33,19 @@ class View {
 
     }
 
+    changeClass(){
+        if (li.classList.contains('true')) {
+            li.classList.replace('true', 'false');
+        } else if (li.classList.contains('false')) {
+            li.classList.replace('false', 'true')
+        }
+
+    }
 
     clickTile() {
         // const tile = this.grid[pos[0]][pos[1]]   
 
-        this.htmlEl.addEventListener('click', (e) => {
+        this.htmlEl.addEventListener('click', e => {
             console.log('click')
             changeState(e)
         })

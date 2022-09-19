@@ -30,7 +30,7 @@ class Board {
         return true
     }
     
-    changeState(tile){
+    changeState(){
         if (tile === false){
             tile = true
         } else {

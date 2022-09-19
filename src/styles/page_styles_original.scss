@@ -4,8 +4,7 @@
 body {
     background-color: peachpuff;
 }
-
-.game-name {
+.game-name{
     display: flex;
     color: #000000fa;
     font-size: 100px;
@@ -13,13 +12,11 @@ body {
     font-family: 'Permanenet Marker', 'Permanent Marker';
 
 }
-
 .gameboard {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 ul {
     display: block;
     background-color: black;
@@ -34,11 +31,10 @@ ul {
     grid-template-columns: repeat(auto-fit, minmax(125px, 5fr));
     // grid-template-rows: repeat(5, auto-fit, minmax(100px, 1fr));
     // grid-template-columns: repeat(5, auto-fit, minmax(125px, 5fr));
-
+    
 }
-
-// 125px 125px 125px 125px 125px);
-// 
+        // 125px 125px 125px 125px 125px);
+        // 
 // ul > 
 
 li {
@@ -46,7 +42,7 @@ li {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    width: 100px;
+    width:  100px;
     margin-left: auto;
     margin-right: auto;
     border: 12px solid green;
