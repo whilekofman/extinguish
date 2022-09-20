@@ -38,7 +38,7 @@ class View {
         let allLi = this.htmlEl.getElementsByClassName("boardpositions")
         for(let li of allLi) {
             if (li.classList.contains('false')) {
-                li.innerText = `false`
+                li.innerText = `${Board.marks[0]}`
             } else {
                 li.innerText = `${Board.marks[1]}`
             }
