@@ -22,7 +22,7 @@ class View {
                 // li.className = `${state}`
                 li.classList.add(`${state}`, 'boardpositions')
                 if (li.classList.contains('false')){
-                    li.innerText = `${state}`
+                    li.innerText = `${Board.marks[0]}`
                 } else {
                     li.innerText = `${Board.marks[1]}`
                 }

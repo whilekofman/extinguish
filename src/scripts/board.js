@@ -98,7 +98,10 @@ class Board {
 
 
 
-Board.marks = ['', '🔥']
+Board.marks = [
+    '🌳🌳🌳🌳🌳🌳', 
+    '🔥🔥🔥🔥🔥🔥'
+]
 
 module.exports = Board;
 
