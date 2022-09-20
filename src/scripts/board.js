@@ -1,28 +1,32 @@
+
 class Board {
-    constructor() {
-        this.grid = Board.makeGrid();
+    constructor(arr, rows) {
+        // debugger
+        this.grid = Board.makeGrid(arr, rows);
     }
 
 
-    static makeGrid() {
+    static makeGrid(arr, rows) {
         const grid = [];
         for (let i = 0; i < 5; i++) {
-            let posValue = false
-            let row = []
-            for (let j = 0; j < 5; j++) {
-                if (i % 2 === 0) posValue = true
-                row.push(posValue);
-            }
-            grid.push(row);
-            grid[0][1] = true
-            grid[0][2] = true
-            grid[0][3] = true
             // debugger
-            // grid[2][0] = true
+            let key = arr[i]
+            let row = [rows[key]]
+            row.map(val => {if (val === 1){
+                debugger
+                val = true
+            } else {
+                val = false
+            } })
+            // for (let j = 0; j < 5; j++) {
+            //     if (i % 2 === 0) posValue = 1
+            //     row.push(posValue);
+            // }
+            grid.push(row);
 
-            // grid[1][2] = true
         }
         return grid;
+        debugger
     }
 
     winRound(){
@@ -40,10 +44,10 @@ class Board {
         // let tile = this.grid[pos[0]][pos[1]] 
         let [row, col] = pos
         // debugger
-        if (this.grid[row][col] === false){
-            this.grid[row][col] = true
+        if (this.grid[row][col] === 0){
+            this.grid[row][col] = 1
         } else {
-            this.grid[row][col] = false
+            this.grid[row][col] = 0
         }
         // debugger
         // console.log(this.winRound())

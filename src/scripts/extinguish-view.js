@@ -1,10 +1,11 @@
-// export class View
 const Board = require("./board.js")
+const Game = require("./game.js")
 
 class View {
-    constructor(htmlEl, board){
-        this.board = new board()
+    constructor(htmlEl, game){
+        this.game = new game()
         this.htmlEl = htmlEl
+        this.board = this.game.grid
   
         this.setUpBoard(htmlEl)
         
@@ -19,7 +20,7 @@ class View {
                 let pos = [rIdx, cIdx]
                 let li = document.createElement('li');
                 li.dataset.id = `${JSON.stringify(pos)}`
-                // li.className = `${state}`
+
                 li.classList.add(`${state}`, 'boardpositions')
                 if (li.classList.contains('false')){
                     li.innerText = `${Board.marks[0]}`
@@ -48,24 +49,26 @@ class View {
 
     registerClick() {
         const ul = document.querySelector('.game-grid')
-        // debugger
         ul.addEventListener('click', (e) => {
             const tile = e.target
             const tilePosition = JSON.parse(tile.dataset.id) 
             this.changeClass(tile) 
             this.board.changeState(tilePosition)    
             let neighboringTiles = this.board.moveMatrix(tilePosition)
-            console.log(neighboringTiles)
-            for (let pos of neighboringTiles) {
-                this.board.changeState(pos)    
-                const dataId = JSON.stringify(pos)
-                const tile = document.querySelector(`[data-id="${dataId}"]`) 
-                this.changeClass(tile)
-            }
+            this.changeNeighbors(neighboringTiles)
             if(this.board.winRound()) console.log('congratulations!') 
             this.redrawGrid()
         })
     } 
+
+    changeNeighbors(neighbors) {
+        for (let pos of neighbors) {
+            this.board.changeState(pos)
+            const dataId = JSON.stringify(pos)
+            const tile = document.querySelector(`[data-id="${dataId}"]`)
+            this.changeClass(tile)
+        }
+    }
 
     changeClass(li){
         if (li.classList.contains('true')) {

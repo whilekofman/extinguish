@@ -43,6 +43,10 @@ li {
     justify-content: center;
 
 }
+li.boardpositions > * {
+    width: 50%;
+    text-align: center;
+}
 
 .true {
     background-color: white;

@@ -5,9 +5,9 @@ const Splash = require("../src/scripts/splash.js")
 window.View = View;
 document.addEventListener('DOMContentLoaded', () => {
     const main = document.getElementById('gameboard')
-    // new View(main, Game);
+    new View(main, Game);
     const splashScreen = document.getElementById("splash") 
-    new View(main, Board);
+    // new View(main, Board);
     new Splash(splashScreen)
     
 })

@@ -1,12 +1,8 @@
-const Board = require("./board")
-const LvlGen = require("./lvlgen.js")
 
-
-class Game {
-    constructor() {
-
-        this.grid = new Board(this.easyLevels(), Game.indexedHash)
-        debugger
+class LvlGen {
+    constructor(){
+        this.easyLevels = easyLevels()
+        this.indexedHash = indexedHash
     }
 
     easyLevels() {
@@ -14,16 +10,16 @@ class Game {
             return Math.floor(Math.random() * max);
         }
 
-        let lengthArr = Game.level1.length
+        let lengthArr = LvlGen.level1.length
         let randomEasyIndex = getRandomInt(lengthArr)
-        let randomEasyLvl = Game.level1[randomEasyIndex]
+        let randomEasyLvl = LvlGen.level1[randomEasyIndex]
         return randomEasyLvl
 
     }
 
 
 }
-Game.indexedHash = {
+const indexedHash = {
     '0': [0, 0, 0, 0, 0],
     '1': [0, 0, 0, 0, 1],
     '2': [0, 0, 0, 1, 0],
@@ -65,15 +61,13 @@ const topLeftCorner = [24, 16, 0, 0, 0]
 const botLeftCorner = topLeftCorner.reverse()
 const topLCLT = [24, 16, 16, 24, 16]
 
-Game.level1 = [
+LvlGen.level1 = [
     topRightCorner, botRightCorner, topLeftCorner, botLeftCorner, topLCLT
 ]
 
 
 
 
+module.exports = LvlGen;
 
 
-
-window.view = Game
-module.exports = Game;
