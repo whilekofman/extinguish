@@ -14,13 +14,6 @@ class Board {
                 row.push(posValue);
             }
             grid.push(row);
-            grid[0][1] = true
-            grid[0][2] = true
-            grid[0][3] = true
-            // debugger
-            // grid[2][0] = true
-
-            // grid[1][2] = true
         }
         return grid;
     }
