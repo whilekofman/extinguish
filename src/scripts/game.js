@@ -20,7 +20,11 @@ class Game {
         return randomEasyLvl
 
     }
-
+    
+    newRound(){
+        // debugger
+        this.grid = new Board(this.easyLevels(), Game.indexedHash)
+    }
 
 }
 Game.indexedHash = {
@@ -64,11 +68,12 @@ const botRightCorner = topRightCorner.reverse()
 const topLeftCorner = [24, 16, 0, 0, 0]
 const botLeftCorner = topLeftCorner.reverse()
 const topLCLT = [24, 16, 16, 24, 16]
+const plus = [6, 15, 7, 6, 2]
+const original =[31, 0, 31, 0, 31]
 
 Game.level1 = [
-    topRightCorner, botRightCorner, topLeftCorner, botLeftCorner, topLCLT
+    topRightCorner, botRightCorner, topLeftCorner, botLeftCorner, topLCLT, plus, original
 ]
-
 
 
 

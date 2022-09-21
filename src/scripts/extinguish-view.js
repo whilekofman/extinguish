@@ -6,9 +6,9 @@ class View {
         this.game = new game()
         this.htmlEl = htmlEl
         this.board = this.game.grid
-  
+        // debugger
         this.setUpBoard(htmlEl)
-        
+   
         this.registerClick()
         
     }
@@ -60,10 +60,19 @@ class View {
             this.board.changeState(tilePosition)    
             let neighboringTiles = this.board.moveMatrix(tilePosition)
             this.changeNeighbors(neighboringTiles)
-            if(this.board.winRound()) console.log('congratulations!') 
+            if (this.board.winRound()) {
+                console.log('congratulations!')
+                this.game.newRound()
+                // debugger
+                // this.updateClasssNewRound()
+                // this.redrawGrid()
+            }
+
             this.redrawGrid()
         })
     } 
+    
+    
 
     changeNeighbors(neighbors) {
         for (let pos of neighbors) {
@@ -88,3 +97,35 @@ class View {
 
 module.exports = View;
 
+// updateClasssNewRound(){
+// let allLi = this.htmlEl.getElementsByClassName("boardpositions")
+// for (let li of allLi) {
+//     if (li.classList.contains('false')) {
+//         li.innerText = `${Board.marks[0]}`
+//     } else {
+//         li.innerText = `${Board.marks[1]}`
+//     }
+// }
+// this.board.grid.forEach((row, rIdx) => {
+//     row.forEach((tile, cIdx) => {
+//         let state = tile
+//         let pos = [rIdx, cIdx]
+//         const tilePosition = JSON.parse(tile.dataset.id)
+//         if (pos === tilePosition) {
+//             if (state === 0) {
+//                 const classList = [`${state}`, 'false', 'boardpositions']
+//                 li.classList.replace((`${state}`, 'false', 'boardpositions'), ...classList)
+//             } else {
+//                 const classList = [`${state}`, 'true', 'boardpositions']
+//                 li.classList.replace((`${state}`, 'true', 'boardpositions'), ...classList)
+
+//             }
+//             if (li.classList.contains('false')) {
+//                 li.innerText = `${Board.marks[0]}`
+//             } else {
+//                 li.innerText = `${Board.marks[1]}`
+//             }
+//         }
+//     })
+// })
+//     }
