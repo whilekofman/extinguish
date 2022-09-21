@@ -6,7 +6,7 @@ class Game {
     constructor() {
 
         this.grid = new Board(this.easyLevels(), Game.indexedHash)
-        debugger
+        // debugger
     }
 
     easyLevels() {

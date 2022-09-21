@@ -9,34 +9,26 @@ class Board {
     static makeGrid(arr, rows) {
         const grid = [];
         for (let i = 0; i < 5; i++) {
-            // debugger
             let key = arr[i]
-            let row = [rows[key]]
-            row.map(val => {if (val === 1){
-                debugger
-                val = true
-            } else {
-                val = false
-            } })
-            // for (let j = 0; j < 5; j++) {
-            //     if (i % 2 === 0) posValue = 1
-            //     row.push(posValue);
-            // }
+            let row = []
+            let currentHashArray = rows[key]
+            for(let j = 0; j < currentHashArray.length; j++) {
+                row.push(currentHashArray[j])
+            }
+
             grid.push(row);
 
         }
         return grid;
-        debugger
     }
 
     winRound(){
         for(let i = 0; i < this.grid.length; i++){
             let row = this.grid[i]
             for (let col = 0; col < row.length; col++){
-                if (row[col] === true) return false 
+                if (row[col] === 1) return false 
             }
         }
-        // debugger
         return true
     }
     
@@ -49,10 +41,7 @@ class Board {
         } else {
             this.grid[row][col] = 0
         }
-        // debugger
-        // console.log(this.winRound())
 
-        // debugger
     }
 
     positionAdjuster(pos){
@@ -91,7 +80,6 @@ class Board {
 
         const [row, col] = pos
         const neighbors = []
-        // neighbors.push(this.positionAdjuster(pos))
         this.positionAdjuster(pos).forEach(ele => {
                 let [x, y] = ele
                 neighbors.push([row + x, col + y])
