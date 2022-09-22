@@ -7,7 +7,6 @@ class View {
         this.game = new game()
         this.htmlEl = htmlEl
         this.board = this.game.grid
-        // debugger
         this.setUpBoard(htmlEl)
    
         this.registerClick()
@@ -89,15 +88,15 @@ class View {
                 this.redrawGrid()
 
                 console.log('congratulations!')
-                this.game.newRound()
-                this.removeUlLi(this.htmleEl)
+                // this.game.newRound()
+                // this.removeUlLi(this.htmleEl)
 
               
         // let remove = document.querySelector(".game-grid")
         // if (remove.parentNode){
         //     remove.parentNode.removeChild(remove);
         // }
-                this.setUpBoard(this.htmlEl)
+                // this.setUpBoard(this.htmlEl)
             }
 
             this.redrawGrid()

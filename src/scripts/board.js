@@ -1,24 +1,13 @@
 
 class Board {
-    constructor(arr, rows) {
-        // debugger
-        this.grid = Board.makeGrid(arr, rows);
+        constructor(arr){
+        this.grid = Board.makeGrid(arr);
     }
 
 
-    static makeGrid(arr, rows) {
-        const grid = [];
-        for (let i = 0; i < 5; i++) {
-            let key = arr[i]
-            let row = []
-            let currentHashArray = rows[key]
-            for(let j = 0; j < currentHashArray.length; j++) {
-                row.push(currentHashArray[j])
-            }
-
-            grid.push(row);
-
-        }
+    static makeGrid(arr) {
+        const grid = arr;
+        // debugger
         return grid;
     }
 

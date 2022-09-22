@@ -5,7 +5,7 @@ const LvlGen = require("./lvlgen.js")
 class Game {
     constructor() {
 
-        this.grid = new Board(this.easyLevels(), Game.indexedHash)
+        this.grid = new Board(this.easyLevels())
         // debugger
     }
 
@@ -16,17 +16,39 @@ class Game {
 
         let lengthArr = Game.level1.length
         let randomEasyIndex = getRandomInt(lengthArr)
+
         let randomEasyLvl = Game.level1[randomEasyIndex]
-        return randomEasyLvl
+        // let randomEasyLvl = Game.level1[5]
+
+        let gameRows = []
+
+        // randomEasyLvl.forEach(num => gameRows.push(Game.indexedHash[num]))
+
+        // let gameRows = this.numToRow(randomEasyLvl)
+        // return gameRows
+        return this.numsToRow(randomEasyLvl)
 
     }
     
-    newRound(){
-        // debugger
-        this.grid = new Board(this.easyLevels(), Game.indexedHash)
-    }
 
+    numsToRow(arr) {
+        const grid = []
+        arr.forEach(num => {
+
+            let stringRow = ('0000' + num.toString(2)).split('').slice(-5)
+            let row = []
+            stringRow.forEach(num =>{
+                // debugger
+                row.push(Math.floor(num))
+            } )
+
+            grid.push(row)
+        })
+        return grid
+    }
 }
+    
+
 Game.indexedHash = {
     '0': [0, 0, 0, 0, 0],
     '1': [0, 0, 0, 0, 1],
@@ -34,8 +56,8 @@ Game.indexedHash = {
     '3': [0, 0, 0, 1, 1],
     '4': [0, 0, 1, 0, 0],
     '5': [0, 0, 1, 0, 1],
-    '6': [0, 0, 1, 1, 1],
-    '7': [0, 0, 1, 1, 0],
+    '6': [0, 0, 1, 1, 0],
+    '7': [0, 0, 1, 1, 1],
     '8': [0, 1, 0, 0, 0],
     '9': [0, 1, 0, 0, 1],
     '10': [0, 1, 0, 1, 0],
@@ -68,7 +90,7 @@ const botRightCorner = topRightCorner.reverse()
 const topLeftCorner = [24, 16, 0, 0, 0]
 const botLeftCorner = topLeftCorner.reverse()
 const topLCLT = [24, 16, 16, 24, 16]
-const plus = [6, 15, 7, 6, 2]
+const plus = [7, 15, 6, 7, 2]
 const original =[31, 0, 31, 0, 31]
 
 Game.level1 = [
