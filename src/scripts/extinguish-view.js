@@ -3,6 +3,7 @@ const Game = require("./game.js")
 
 class View {
     constructor(htmlEl, game){
+        // this.existingUL = document.querySelector()
         this.game = new game()
         this.htmlEl = htmlEl
         this.board = this.game.grid
@@ -13,7 +14,10 @@ class View {
         
     }
     setUpBoard(htmlEl) {
-        const ul = document.createElement('ul')
+        
+        // this.removeChildElements(htmlEl)
+
+        let ul = document.createElement('ul')
         this.board.grid.forEach ((row, rIdx) => {
             row.forEach((tile, cIdx) => {
                 let state = tile
@@ -31,13 +35,21 @@ class View {
                 } else {
                     li.innerText = `${Board.marks[1]}`
                 }
-                ul.append(li)
+                ul.appendChild(li)
                 
             })
         })
         ul.className= "game-grid"
-        htmlEl.append(ul)
+        htmlEl.appendChild(ul)
     }
+    removeChildElements(thing){
+        while (thing.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+
+    }
+    
+
 
     redrawGrid(){
         let allLi = this.htmlEl.getElementsByClassName("boardpositions")
@@ -50,6 +62,19 @@ class View {
         }
 
     }
+    removeChildElements(htmlEl) {
+        while (htmlEl.firstChild) {
+            htmlEl.removeChild(parent.firstChild);
+        }
+
+    }
+
+    removeUlLi(htmleEl){
+        let removeLi = document.querySelector(".game-grid")
+        let removeUl = document.querySelector(".gameboard")        
+        this.removeChildElements(removeLi)
+        this.removeChildElements(removeUl)
+    }
 
     registerClick() {
         const ul = document.querySelector('.game-grid')
@@ -61,11 +86,18 @@ class View {
             let neighboringTiles = this.board.moveMatrix(tilePosition)
             this.changeNeighbors(neighboringTiles)
             if (this.board.winRound()) {
+                this.redrawGrid()
+
                 console.log('congratulations!')
                 this.game.newRound()
-                // debugger
-                // this.updateClasssNewRound()
-                // this.redrawGrid()
+                this.removeUlLi(this.htmleEl)
+
+              
+        // let remove = document.querySelector(".game-grid")
+        // if (remove.parentNode){
+        //     remove.parentNode.removeChild(remove);
+        // }
+                this.setUpBoard(this.htmlEl)
             }
 
             this.redrawGrid()
