@@ -69,6 +69,7 @@ class View {
 
             if (this.board.winRound()) {
                 this.redrawGrid()
+                window.location.reload();
 
                 console.log('congratulations!')
                
