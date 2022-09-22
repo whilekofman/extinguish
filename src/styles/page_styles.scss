@@ -1,27 +1,27 @@
-
-
-// @media screen {min-width: none: ;
-    
-// }
-
-
+body{
+    background-color: peachpuff;
+}
 .wrapper{
     max-width: 960px;
     display: flex;
-    flex: block;
+    flex: shrink;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin: auto;
-}
-
-.game-name{
     font-family: 'Permanenet Marker', 'Permanent Marker';
+}
+#header {
+    align-items: stretch;
+}
+.game-name{
     font-size: 8vw;
     z-index: 200
-    // padding-left: %;
-    // font-size: 6REM;
+
+}
+#about {
+    padding-top: 2%;
 }
 
 ul{
