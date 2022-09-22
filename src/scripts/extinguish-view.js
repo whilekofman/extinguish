@@ -65,6 +65,8 @@ class View {
             this.board.changeState(tilePosition)    
             let neighboringTiles = this.board.moveMatrix(tilePosition)
             this.changeNeighbors(neighboringTiles)
+            this.redrawGrid()
+
             if (this.board.winRound()) {
                 this.redrawGrid()
 
@@ -72,7 +74,6 @@ class View {
                
             }
 
-            this.redrawGrid()
         })
     } 
     
