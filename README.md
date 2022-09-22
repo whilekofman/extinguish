@@ -61,3 +61,5 @@ As an example the level below can be stored in an array of length 5 consisting o
 <img src="images/board_image.png"
      alt="level layout"
  />
+
+<a href="https://whilekofman.github.io/extinguish/">Play extinguish!</a>
