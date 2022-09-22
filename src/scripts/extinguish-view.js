@@ -89,6 +89,9 @@ class View {
 
                 console.log('congratulations!')
                 // this.game.newRound()
+                window.location.reload();
+
+
                 // this.removeUlLi(this.htmleEl)
 
               
