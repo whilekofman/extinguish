@@ -1,20 +1,46 @@
 // #splash {
-//     display: grid;
+//     display: flex;
 //     position: fixed;
-//     top: 0;
 //     left: 0;
 //     width: 100%;
-//     height: 100vh;
-//     z-index: 100;
+//     height: 100%;
+//     z-index: 0;
+//     max-width: fit-content;
+//     flex-direction: column;
 //     background-color: peachpuff;
 //     font-family: 'Permanenet Marker', 'Permanent Marker';
-    
+//     margin: auto;
+//     // grid-template-columns: repeat(2, 1fr);
+
+
+// }
+// .game-name{
+//     padding-left: 20px;
+//     padding-bottom: 20px;
+
+// }
+// .inrto {
+//     padding-left: 40px;
+//     // grid-area: intro;
+//     // text-align: center;
+//     vertical-align: auto;
+// }  
+// .confirmationbtn {
+//     grid-area: button;
+//     // box-sizing: 
+//     padding-top: 150px;
+//     vertical-align: middle;
+//     width: 100%;
+//     background-color: #32323200;
+//     font-family: 'Permanenet Marker', 'Permanent Marker';
+//     border-radius: 20px;
 // }
 
-// p {
-//     text-align: center;
-//     vertical-align: auto;
-//     padding-top: 20vh;
+// #gameshot {
+//     margin: auto;
+//     width: auto;
+//     height: auto;
+//     align-items: center;
 // }
 
 // @keyframes fadeIn {

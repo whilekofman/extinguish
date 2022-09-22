@@ -1,10 +1,7 @@
 
-
-// @media screen {min-width: none: ;
-    
-// }
-
-
+body{
+    background-color: peachpuff;
+}
 .wrapper{
     max-width: 960px;
     display: flex;
@@ -19,7 +16,6 @@
 .game-name{
     font-family: 'Permanenet Marker', 'Permanent Marker';
     font-size: 8vw;
-    z-index: 200
     // padding-left: %;
     // font-size: 6REM;
 }

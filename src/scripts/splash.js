@@ -1,16 +1,25 @@
-class Splash {
-    constructor(htmlEl) {
+// class Splash {
+// //     constructor() {
 
-        this.htmlEl = htmlEl
+// //         this.displaySplash()
+// //         this.proceedClick()
 
-    }
+// //     }
 
-    displaySplash(htmlEl){
-        console.log(htmlEl)
-        let confirmButton = htmlEl.createElement('button')
-        button.innerText = "Confirm"
-        this.htmlEl.append(confirmButton)
-    }
-}
+// //     displaySplash(){
+// //         let confirmButton = document.createElement('button');
+// //         let imgBtn = document.getElementById("gameshot");
+// //         imgBtn.append(confirmButton)
 
-module.exports = Splash;
+
+// //     }
+// //     proceedClick(){
+// //         let proceed = document.getElementById("gameshot")
+// //         proceed.addEventListner('click', (e) =>{
+// //                 this.parent('#splash').fadeOut(500);
+// //             });
+
+// //     }
+// // }
+
+// module.exports = Splash;

@@ -92,11 +92,6 @@ class View {
                 this.game.newRound()
                 this.removeUlLi(this.htmleEl)
 
-              
-        // let remove = document.querySelector(".game-grid")
-        // if (remove.parentNode){
-        //     remove.parentNode.removeChild(remove);
-        // }
                 this.setUpBoard(this.htmlEl)
             }
 
