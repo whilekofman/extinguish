@@ -1,4 +1,5 @@
 Extinguish
+<a href="https://whilekofman.github.io/extinguish/">Play Extinguish!</a> 
 Functionality & MVPs
 Fill in this template:
 
