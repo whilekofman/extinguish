@@ -1,7 +1,7 @@
-
 Extinguish
 <a href="https://whilekofman.github.io/extinguish/">Play Extinguish!</a> 
 Functionality & MVPs
+Fill in this template:
 
 Extinguish is a game that is based on the hand held electronic game Lightsout. The game will work as follows:
 
