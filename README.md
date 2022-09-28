@@ -1,5 +1,10 @@
+
 Extinguish
+<<<<<<< HEAD
 <a href="https://whilekofman.github.io/extinguish/">Play Extinguish!</a> 
+=======
+<a href="https://whilekofman.github.io/extinguish/">Play extinguish!</a>
+>>>>>>> 63e6c6c (fix readme again)
 Functionality & MVPs
 
 Extinguish is a game that is based on the hand held electronic game Lightsout. The game will work as follows:
@@ -32,3 +37,7 @@ The webpage will include:
 <img src="images/wireframe.png"
      alt="Wire frame"
  />
+<<<<<<< HEAD
+=======
+
+>>>>>>> 63e6c6c (fix readme again)
