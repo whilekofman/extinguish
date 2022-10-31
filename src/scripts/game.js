@@ -20,18 +20,20 @@ class Game {
 
     }
     
-
     numsToGrid(arr) {
         const grid = []
         arr.forEach(num => {
-            let stringRow = ('0000' + num.toString(2)).split('').slice(-5)
-            let row = []
-            stringRow.forEach(num =>{
-                row.push(Math.floor(num))
-            } )
+            const row = []
+            let i = 0
+            let numCopy = num
+            while (i < 5) {
+                row.unshift(numCopy & 1)
+                numCopy = numCopy >> 1
+                i ++
+            }
             grid.push(row)
         })
-        return grid
+        return(grid)
     }
 }
 const topRightCorner = [3, 1, 0, 0, 0]
